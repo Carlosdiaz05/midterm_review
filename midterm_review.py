@@ -55,7 +55,6 @@ def find_words(filename):
             for word in words:
                 if len(word) == 3 and word[0] in "bB":
                     print(word)
-
 find_words("midterm_practice.txt") #i'm calling the function here
 
 # Question
@@ -65,6 +64,23 @@ find_words("midterm_practice.txt") #i'm calling the function here
 
 
 
-
-#Question
+#Question forcing user to input multiple of 6
 # Write a function that forces the user to enter a multiple of 6 number. Use try, except to catch invalid inputs. Return that number
+def multiple_of_6():
+    """
+    Returns a multiple of 6, keeps asking otherwise
+    :return: int
+    """
+    while True:
+        try:
+            n = input("Please give me a multiple of 6: ")
+            n = int(n)
+            if n % 6 == 0: #could use instead -> if n / 6 == n // 6
+                return n
+            else:
+                print("that is not a multiple of 6")
+        except ValueError:
+            print("That is not a valid number ")
+
+
+multiple_of_6()
